@@ -20,7 +20,7 @@ This a sample app made to get clear idea about angular topics. Following are the
 * Node.js - evented I/O for the backend
 * Express - fast node.js network app framework
 
-***Fun Fact :*** This app follows new web stack i.e., MEAN minus M satck 😂😂  
+***Fun Fact :*** This app follows new web stack i.e., MEAN minus M stack 😂😂  
 Only **E**xpress, **A**ngular & **N**ode, no **M**ongodb 😜😜 
 ### Installation
 
@@ -55,12 +55,12 @@ $ ng serve --open
 ```
 ### App Work Flow
 
-Since this is an sample app mainly focussed on angular topics, db implementation is not made.
+Since this is an sample app mainly focussed on angular topics, db implementation is not made. so signup will not really add the info.
 
 - Signin and signup pages uses Reactive forms and validation concepts
 - Any one can browse books in the */browse* route
 - But to view book details i.e., *book/:bookid* route the person should be logged in
-- Upload book router applicable only to admins
+- Upload book  *upload* route applicable only to admins
 
 ### Credentials to use in app
 ***User role***
