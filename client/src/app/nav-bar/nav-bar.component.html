@@ -1,0 +1,39 @@
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/browse" routerLinkActive="active" class="nav-link">Browse</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav ml-auto">
+            <ng-container *ngIf="!authService.isAuthenticated(); else authenticated">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/signin" routerLinkActive="active" class="nav-link">Signin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/signup" routerLinkActive="active" class="nav-link">Signup</a>
+                </li>
+            </ng-container>
+            <ng-template #authenticated>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/mybooks" routerLinkActive="active" class="nav-link">My Books</a>
+                </li>
+                <ng-container *ngIf="authService.currentUserValue().role === 'admin'">
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/upload" routerLinkActive="active" class="nav-link">Upload
+                            Book</a>
+                    </li>
+                </ng-container>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/profile" routerLinkActive="active" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link signout" class="nav-link" (click)="signout()">Signout</a>
+                </li>
+            </ng-template>
+        </ul>
+    </nav>
+</header>

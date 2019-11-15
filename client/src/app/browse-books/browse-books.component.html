@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="search">
+        <div class="row">
+            <div class="col">
+                <div class="mx-auto w-50 p-3">
+                    <form [formGroup]="searchForm" class="form-inline" (ngSubmit)="onSubmit()">
+                        <div class="form-group mr-2">
+                            <label class="sr-only">Keyword</label>
+                            <input type="text" formControlName="keyword" class="form-control"
+                                placeholder="Title / Author / Language">
+                        </div>
+                        <div class="form-group mr-2">
+                            <select class="form-control" formControlName="category">
+                                <option>All</option>
+                                <option>Sci-fi</option>
+                                <option>Thriller</option>
+                                <option>Drama</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Find Books</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngFor="let book of books; let index=index" >
+        <div *ngIf="index%4 == 0" class="row">
+            <div class="col-sm-3"><app-book-preview [book]="books[index]"></app-book-preview></div>
+            <div class="col-sm-3" *ngIf="books.length > index+1"><app-book-preview [book]="books[index+1]"></app-book-preview></div>
+            <div class="col-sm-3" *ngIf="books.length > index+2"><app-book-preview [book]="books[index+2]"></app-book-preview></div>
+            <div class="col-sm-3" *ngIf="books.length > index+3"><app-book-preview [book]="books[index+3]"></app-book-preview></div>
+        </div>
+    </ng-container>
+</div>

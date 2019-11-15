@@ -1,0 +1,28 @@
+.home {
+    background-image: url('../assets/images/building.png.jpg');
+    opacity: 80%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+	justify-content: center;
+	text-align : center;
+    align-items : center;    
+}
+
+.browse {
+    
+    font-size: 45px;
+}
+
+.browse a {
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.browse:hover {
+    cursor: pointer;
+}
