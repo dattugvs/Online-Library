@@ -13,6 +13,7 @@ This a sample app made to get clear idea about angular topics. Following are the
   - Reactive forms and their validations
   - Templates
 
+This app will not have db implementation. Book details are fetched from json data in the file *server/db/index.js*.
 ### Tech
 
 * Angular 8 - HTML enhanced for web apps!
