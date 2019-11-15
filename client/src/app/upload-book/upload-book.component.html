@@ -1,1 +1,50 @@
-<p>upload-book works!</p>
+<div class="container">
+    <form [formGroup]="uploadBookForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" formControlName="title" class="form-control">
+            <div *ngIf="submitted && f.title.errors" class="alert alert-danger" role="alert">
+                <div *ngIf="f.title.errors.required">
+                    Book Title is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Author</label>
+            <input type="text" formControlName="author" class="form-control">
+            <div *ngIf="submitted && f.author.errors" class="alert alert-danger" role="alert">
+                <div *ngIf="f.author.errors.required">
+                    Book Author is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Language</label>
+            <input type="text" formControlName="language" class="form-control">
+            <div *ngIf="submitted && f.language.errors" class="alert alert-danger" role="alert">
+                <div *ngIf="f.language.errors.required">
+                    Book Language is required
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <input type="number" formControlName="price" class="form-control">
+            <div *ngIf="submitted && f.price.errors" class="alert alert-danger" role="alert">
+                <div *ngIf="f.price.errors.min">
+                    Book Price is invalid
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Book Reference Link</label>
+            <input type="text" formControlName="link" class="form-control">
+            <div *ngIf="submitted && f.link.errors" class="alert alert-danger" role="alert">
+                <div *ngIf="f.link.errors.required">
+                    Book Reference is required
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload Book</button>
+    </form>
+</div>

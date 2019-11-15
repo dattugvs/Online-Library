@@ -11,11 +11,13 @@ router.get('/find', (req, res) => {
 
     const filetredBooks = books.filter((book) => {
         return (
-            category === "All" || 
-            book.genre === category || book.language === keyword || book.title.includes(category) ||
-            book.country === keyword || book.author.includes(category) 
+            (category === "All" || category === book.genre) &&
+            (keyword === "" || book.language === keyword || book.title.includes(category) ||
+                book.country === keyword || book.author.includes(category) 
+            )
         );
     });
+    console.log(filetredBooks.length);
     res.status(200).json(filetredBooks);
 });
 
@@ -25,7 +27,8 @@ router.get('/book', verifyToken({'roles':['admin', 'user']}), (req, res) => {
     res.status(200).json(book);
 });
 
-router.get('/mybooks', (req, res) => {
+router.post('/mybooks', (req, res) => {
+    const userId = req.body.userId;
     res.status(200).json(userBooks);
 });
 

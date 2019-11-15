@@ -18,6 +18,7 @@ import { JwtInterceptor } from './__interceptors/jwt.interceptor';
 import { ErrorInterceptor } from './__interceptors/error.interceptor';
 import { AuthService } from './__services/auth.service';
 import { SearchService } from './__services/search.service';
+import { MyBooksComponent } from './my-books/my-books.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SearchService } from './__services/search.service';
     BookPreviewComponent,
     BookImageHoverDirective,
     BookComponent,
-    UploadBookComponent
+    UploadBookComponent,
+    MyBooksComponent
   ],
   imports: [
     BrowserModule,

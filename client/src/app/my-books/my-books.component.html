@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="my-books">
+        <div class="mx-auto text-center">
+            <h3>Saved Books</h3>
+        </div>
+    </div>
+    <div *ngIf="books && books.length === 0" class="mx-auto">
+        You didn't saved any books
+    </div>
+    <ng-container *ngFor="let book of books; let index=index">
+        <div *ngIf="index%4 == 0" class="row">
+            <div class="col-sm-3">
+                <app-book-preview [book]="books[index]"></app-book-preview>
+            </div>
+            <div class="col-sm-3" *ngIf="books.length > index+1">
+                <app-book-preview [book]="books[index+1]"></app-book-preview>
+            </div>
+            <div class="col-sm-3" *ngIf="books.length > index+2">
+                <app-book-preview [book]="books[index+2]"></app-book-preview>
+            </div>
+            <div class="col-sm-3" *ngIf="books.length > index+3">
+                <app-book-preview [book]="books[index+3]"></app-book-preview>
+            </div>
+        </div>
+    </ng-container>
+</div>

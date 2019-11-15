@@ -14,4 +14,14 @@ export class BookService {
         const url = `http://localhost:5000/book?bookId=${bookId}`;
         return this.http.get<Book>(url);
     }
+
+    getUserSavedBooks(userId:string):Observable<Book[]> {
+        const url  = `http://localhost:5000/mybooks`;
+        return this.http.post<Book[]>(url, {userId:userId});
+    }
+
+    upload(book:Book):Observable<any> {
+        const url = `http://localhost:5000/upload`;
+        return this.http.post<any>(url, book);
+    }
 }
