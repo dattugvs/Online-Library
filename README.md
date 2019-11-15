@@ -6,7 +6,7 @@ This a sample app made to get clear idea about angular topics. Following are the
   - Routing
   - Observables
   - Http Requests
-  - Jwt Authenticatio and Role based Autorization
+  - Jwt Authentication and Role based Autorization
   - Iterceptors
   - Guards
   - Custom Directives
